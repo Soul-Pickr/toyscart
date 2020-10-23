@@ -1,0 +1,313 @@
+<?php
+$servername="localhost";
+$user="root";
+$pass="";
+$db="toys";
+if(isset($_POST['PL']))
+{
+	$con=mysql_connect($servername,$user,$pass);
+	mysql_select_db($db,$con);
+	if($con)
+	{
+		da();
+	}
+	else
+	{
+		echo "<CENTER>","<font face='Lucida Calligraphy' size=50 COLOR='TEAL'>","ORDER CANNOT BE PLACED DUE TO CONNECTIVITY ERROR","</FONT>","</CENTER>","<BR/>";
+	}
+}
+function da()
+{
+$NAME=$_POST['name'];
+$MOBILE=$_POST['mobile'];
+$ADDRESS=$_POST['address'];
+$PINCODE=$_POST['pincode'];
+$EMAIL=$_POST['email'];
+$ORDERNO=rand();
+$AMOUNT=null;
+$CODE=$_POST['codee'];
+if($CODE=="D1")
+{
+$AMOUNT="RS.499";
+}
+if($CODE=="D2")
+{
+$AMOUNT="RS.599";
+}
+
+if($CODE=="D3")
+{
+$AMOUNT="RS.699";
+}
+
+if($CODE=="D4")
+{
+$AMOUNT="RS.799";
+}
+if($CODE=="D5")
+{
+$AMOUNT="RS.599";
+}
+if($CODE=="D6")
+{
+$AMOUNT="RS.399";
+}
+if($CODE=="D7")
+{
+$AMOUNT="RS.199";
+}
+if($CODE=="D8")
+{
+$AMOUNT="RS.99";
+}
+if($CODE=="D9")
+{
+$AMOUNT="RS.99";
+}
+if($CODE=="D10")
+{
+$AMOUNT="RS.599";
+}
+if($CODE=="D11")
+{
+$AMOUNT="RS.699";
+}
+if($CODE=="D12")
+{
+$AMOUNT="RS.89";
+}
+if($CODE=="D13")
+{
+$AMOUNT="RS.589";
+}
+if($CODE=="D14")
+{
+$AMOUNT="RS.459";
+}
+if($CODE=="D15")
+{
+$AMOUNT="RS.469";
+}
+if($CODE=="D16")
+{
+$AMOUNT="RS.999";
+}
+if($CODE=="D17")
+{
+$AMOUNT="RS.499";
+}
+if($CODE=="D18")
+{
+$AMOUNT="RS.219";
+}
+if($CODE=="D19")
+{
+$AMOUNT="RS.1559";
+}
+if($CODE=="D20")
+{
+$AMOUNT="RS.259";
+}
+
+if($CODE=="L1")
+{
+$AMOUNT="RS.4369";
+}
+if($CODE=="L2")
+{
+$AMOUNT="RS.969";
+}
+if($CODE=="L3")
+{
+$AMOUNT="RS.859";
+}
+if($CODE=="L4")
+{
+$AMOUNT="RS.259";
+}
+if($CODE=="L5")
+{
+$AMOUNT="RS.599";
+}
+if($CODE=="L6")
+{
+$AMOUNT="RS.499";
+}
+if($CODE=="L7")
+{
+$AMOUNT="RS.699";
+}
+if($CODE=="L8")
+{
+$AMOUNT="RS.499";
+}
+if($CODE=="L9")
+{
+$AMOUNT="RS.49";
+}
+if($CODE=="L10")
+{
+$AMOUNT="RS.4959";
+}
+if($CODE=="L11")
+{
+$AMOUNT="RS.489";
+}
+if($CODE=="L12")
+{
+$AMOUNT="RS.799";
+}
+if($CODE=="L13")
+{
+$AMOUNT="RS.399";
+}
+if($CODE=="L14")
+{
+$AMOUNT="RS.599";
+}
+if($CODE=="L15")
+{
+$AMOUNT="RS.499";
+}
+if($CODE=="L16")
+{
+$AMOUNT="RS.4589";
+}
+if($CODE=="L17")
+{
+$AMOUNT="RS.599";
+}
+if($CODE=="L18")
+{
+$AMOUNT="RS.499";
+}
+if($CODE=="L19")
+{
+$AMOUNT="RS.479";
+}
+if($CODE=="L20")
+{
+$AMOUNT="RS.599";
+}
+
+if($CODE=="S1")
+{
+$AMOUNT="RS.499";
+}
+
+if($CODE=="S2")
+{
+$AMOUNT="RS.479";
+}
+if($CODE=="S3")
+{
+$AMOUNT="RS.449";
+}
+if($CODE=="S4")
+{
+$AMOUNT="RS.449";
+}
+if($CODE=="S5")
+{
+$AMOUNT="RS.779";
+}
+if($CODE=="S6")
+{
+$AMOUNT="RS.549";
+}
+if($CODE=="S7")
+{
+$AMOUNT="RS.879";
+}
+if($CODE=="S8")
+{
+$AMOUNT="RS.859";
+}
+if($CODE=="S9")
+{
+$AMOUNT="RS.699";
+}
+if($CODE=="S10")
+{
+$AMOUNT="RS.459";
+}
+if($CODE=="S11")
+{
+$AMOUNT="RS.789";
+}
+if($CODE=="S12")
+{
+$AMOUNT="RS.869";
+}
+if($CODE=="S13")
+{
+$AMOUNT="RS.5899";
+}
+if($CODE=="S14")
+{
+$AMOUNT="RS.799";
+}
+if($CODE=="S15")
+{
+$AMOUNT="RS.659";
+}
+if($CODE=="S16")
+{
+$AMOUNT="RS.369";
+}
+if($CODE=="S17")
+{
+$AMOUNT="RS.429";
+}
+if($CODE=="S18")
+{
+$AMOUNT="RS.419";
+}
+if($CODE=="S19")
+{
+$AMOUNT="RS.209";
+}
+if($CODE=="S20")
+{
+$AMOUNT="RS.9";
+}
+
+$send=mysql_query("insert into cart values($ORDERNO,'$NAME','$ADDRESS',$PINCODE,'$EMAIL',$MOBILE,'$CODE','$AMOUNT')");
+if($send)
+{
+	echo "<CENTER>","<font face='Lucida Calligraphy' size='50' COLOR='PURPLE'>","YOUR ORDER NO. IS ",$ORDERNO,"</FONT>","</CENTER>","<BR/>";
+	echo "<CENTER>","<font face='Lucida Calligraphy' size='50' COLOR='TEAL'>","YOUR ORDER HAS BEEN PLACED NOW...","</FONT>","</CENTER>","<BR/>";
+}
+
+else
+{
+	echo "<CENTER>","<font face='Lucida Calligraphy' size=50 COLOR='TEAL'>","ORDER CANNOT BE PLACED DUE TO SOME SERVER ERROR","</FONT>","</CENTER>","<BR/>";
+}
+}
+
+?>
+<html>
+<head>
+<title>Orders</title>
+<STYLE TYPE="TEXT/CSS">
+.button1 {
+    background-color:GREEN;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</STYLE>
+</head>
+<body background="rrr.jpg"><CENTER><BR/><BR/><BR/><BR/><BR/><BR/>
+<A HREF="HOMEPAGE.HTML"><IMG SRC="BACK4.Gif" WIDTH="200" HEIGHT="90"></A>      
+<A HREF="DELETE.HTML"><IMG SRC="DELETE.Gif" WIDTH="200" HEIGHT="90"></A>                 <A HREF="UPDATE.HTML"><IMG SRC="UPDATE.Gif" WIDTH="200" HEIGHT="90"></A>      <A HREF="SHOW.HTML"><IMG SRC="SHOW.Gif" WIDTH="200" HEIGHT="90"></A>
+</CENTER></BODY>
+</HTML>
+
+

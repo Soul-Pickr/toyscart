@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>ORDER</title>
+<STYLE TYPE="TEXT/CSS">
+.button1 {
+    background-color:GREEN;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: RED;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button3 {
+    background-color: PURPLE;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</STYLE>
+<script type="text/javascript">
+function fu()
+{
+if(frm.name.value.length==0)
+{
+alert("Please enter customer name");
+}
+else if(frm.mobile.value.length==0)
+{
+alert("Please enter mobile number");
+}
+else if(frm.address.value.length==0)
+{
+alert("Please enter your address");
+}
+else if(frm.pincode.value.length==0)
+{
+alert("Please enter pincode");
+}
+else if(frm.email.value.length==0)
+{
+alert("Please enter E-mail address");
+}
+
+else
+{
+confirm("Your name is:"+frm.name.value+"and Address is:"+frm.address.value+".Your order for toys has been placed now.Payment will be taken on the delivery of the product..Thank You!!");
+}
+
+}
+
+function fu1()
+{
+var a=frm.mobile.value;
+if(isNaN(a))
+{
+alert("please enter valid mobile number");
+}
+else
+{
+if(a.length!=10)
+{
+alert("please enter valid mobile number");
+}
+}
+}
+function fu2()
+{
+var a=frm.pincode.value;
+if(isNaN(a))
+{
+alert("please enter valid pin code");
+}
+else
+{
+if(a.length!=6)
+{
+alert("please enter valid pin code");
+}
+}
+}
+function nav()
+{
+var a=new Date();
+var b=a.getDate();
+var c=a.getMonth();
+var d=a.getYear();
+var e=a.getHours();
+var f=a.getMinutes();
+frm.t1.value=b;
+frm.t2.value=c+1;
+frm.t3.value=d+1900;
+frm.tt1.value=e;
+frm.tt2.value=f;
+}
+
+
+</script>
+</head>
+<body onLoad="nav()" BACKGROUND="abt.jpg"><CENTER>
+
+
+<B>
+<img src="cod.png" WIDTH="1000" HEIGHT="300"><br/>
+
+<form name="frm" METHOD="POST" ACTION="PRODU.PHP">
+
+<table border=50 bordercolor=teal align=center cellpadding=5 cellspacing=10>
+<caption><b>Today's Date<input type="text" name="t1" size=2><input type="text" name="t2" size=2><input type="text" name="t3" size="6"></br>
+Time:<input type="text" name="tt1" size=2><input type="text" name="tt2" size=2></br></b></caption>
+<tr><td>
+<b><h3>Customer name</h3></b></td><td><input type="text" name="name" size=15></td></tr>
+<tr><td><b><h3>Mobile number</h3></b></td><td><input type="text" name="mobile" maxlength=10 onBlur="fu1()"></td></tr>
+<tr><td><b><h3>Address:</h3></b></td><td><TEXTAREA name="address" rows=10 cols=20 ></textarea></td></tr>
+<tr><td><b><h3>Pin code</h3></b></td><td><input type="text" name="pincode" maxlength=6 onBlur="fu2()"></td></tr>
+<tr><td><b><h3>E-mail</h3></b></td><td><input type="text" name="email" size=20></td></tr>
+<tr><td><b><h3>ITEM CODE</h3></b></td><td><SELECT NAME="codee">
+<OPTION VALUE="D1">D1</OPTION>
+<OPTION VALUE="D2">D2</OPTION>
+<OPTION VALUE="D3">D3</OPTION>
+<OPTION VALUE="D4">D4</OPTION>
+<OPTION VALUE="D5">D5</OPTION>
+<OPTION VALUE="D6">D6</OPTION>
+<OPTION VALUE="D7">D7</OPTION><OPTION VALUE="D8">D8</OPTION><OPTION VALUE="D9">D9</OPTION><OPTION VALUE="D10">D10</OPTION><OPTION VALUE="D11">D11</OPTION><OPTION VALUE="D12">D12</OPTION><OPTION VALUE="D13">D13</OPTION><OPTION VALUE="D14">D14</OPTION><OPTION VALUE="D15">D15</OPTION><OPTION VALUE="D16">D16</OPTION><OPTION VALUE="D17">D17</OPTION><OPTION VALUE="D18">D18</OPTION><OPTION VALUE="D19">D19</OPTION><OPTION VALUE="D20">D20</OPTION><OPTION VALUE="S1">S1</OPTION><OPTION VALUE="S2">S2</OPTION><OPTION VALUE="S3">S3</OPTION><OPTION VALUE="S4">S4</OPTION><OPTION VALUE="S5">S5</OPTION><OPTION VALUE="S6">S6</OPTION><OPTION VALUE="S7">S7</OPTION><OPTION VALUE="S8">S8</OPTION><OPTION VALUE="S9">S9</OPTION><OPTION VALUE="S10">S10</OPTION><OPTION VALUE="S11">S11</OPTION><OPTION VALUE="S12">S12</OPTION><OPTION VALUE="S13">S13</OPTION><OPTION VALUE="S14">S14</OPTION><OPTION VALUE="S15">S15</OPTION><OPTION VALUE="S16">S16</OPTION><OPTION VALUE="S17">S17</OPTION><OPTION VALUE="S18">S18</OPTION><OPTION VALUE="S19">S19</OPTION><OPTION VALUE="S20">S20</OPTION>
+<OPTION VALUE="L1">L1</OPTION><OPTION VALUE="L2">L2</OPTION><OPTION VALUE="L3">L3</OPTION><OPTION VALUE="L4">L4</OPTION><OPTION VALUE="L5">L5</OPTION><OPTION VALUE="L6">L6</OPTION><OPTION VALUE="L7">L7</OPTION><OPTION VALUE="L8">L8</OPTION><OPTION VALUE="L9">L9</OPTION><OPTION VALUE="L10">L10</OPTION><OPTION VALUE="L11">L11</OPTION><OPTION VALUE="L12">L12</OPTION><OPTION VALUE="L13">L13</OPTION><OPTION VALUE="L14">L14</OPTION><OPTION VALUE="L15">L15</OPTION><OPTION VALUE="L16">L16</OPTION><OPTION VALUE="L17">L17</OPTION><OPTION VALUE="L18">L18</OPTION><OPTION VALUE="L19">L19</OPTION><OPTION VALUE="L20">L20</OPTION>
+</SELECT></td></tr>
+</table>
+</br>
+<H2>PLEASE TAKE CARE THAT EVERYTHING IS FILLED OUT CORRECTLY,THEN CLICK "SUBMIT ORDER." CLICKING THE "SUBMIT ORDER" BUTTON WILL SEND YOUR ORDER TO <B><I>TOYSCART.COM</B></I><BR>
+	
+<CENTER>
+<INPUT TYPE="RESET" CLASS="BUTTON2">
+<INPUT TYPE="SUBMIT" CLASS="BUTTON3" value="Place Order" name="PL">
+<A HREF="HOMEPAGE.HTML"><input type="BUTTON" CLASS="BUTTON1" value="BACK TO HOMEPAGE"></a></CENTER>
+<A HREF="DELETE.HTML"><IMG SRC="DELETE.GIF" WIDTH="200" HEIGHT="90"></A>       <A HREF="UPDATE.HTML"><IMG SRC="UPDATE.GIF" WIDTH="200" HEIGHT="90"></A>      <A HREF="SHOW.HTML"><IMG SRC="SHOW.GIF" WIDTH="200" HEIGHT="90"></A>      
+</form>
+
+<HR COLOR="BLACK" SIZE="2"><HR COLOR="BLACK" SIZE="2"><HR COLOR="BLACK" SIZE="2">       <I><marquee behavior="alternate"><img src="SHARE.GIF" WIDTH="200" HEIGHT="200"> <img src="INFORM.GIF" WIDTH="1300" HEIGHT="250"></MARQUEE><HR COLOR="BLACK"><I>
+</body>
+</html>

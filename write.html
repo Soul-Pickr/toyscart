@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Typewriter</h1>
+
+<button onclick="typeWriter()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'This website is created by Raj.The main purpose of this website is to sell out toys online,we are proud to share that we have more than 10000 online customers.Our website also use to provide many offers on different ocassions.This website is certified by Indian government.This website is use to deliver gadgets only in 48 hr,If you feel any uncomfortable you can also send it back within 48 hr of delivery.Your informations are fully safe with us.Thank You';
+var speed = 100;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+</body>
+</html>
