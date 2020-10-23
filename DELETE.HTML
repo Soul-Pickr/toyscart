@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<TITLE>MY ORDERS</TITLE>
+<STYLE TYPE="TEXT/CSS">
+.button1 {
+    background-color:GREEN;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</STYLE>
+<script type="text/javascript">
+function fu()
+{
+if(frm.name.value.length==0)
+{
+alert("Please enter customer name");
+}
+else if(frm.mobile.value.length==0)
+{
+alert("Please enter mobile number");
+}
+else if(frm.address.value.length==0)
+{
+alert("Please enter your address");
+}
+else if(frm.pincode.value.length==0)
+{
+alert("Please enter pincode");
+}
+else if(frm.email.value.length==0)
+{
+alert("Please enter E-mail address");
+}
+
+else
+{
+confirm("Your name is:"+frm.name.value+"and Address is:"+frm.address.value+".Your order for toys has been placed now.Payment will be taken on the delivery of the product..Thank You!!");
+}
+
+}
+
+function fu1()
+{
+var a=frm.mobile.value;
+if(isNaN(a))
+{
+alert("please enter valid mobile number");
+}
+else
+{
+if(a.length!=10)
+{
+alert("please enter valid mobile number");
+}
+}
+}
+function fu2()
+{
+var a=frm.pincode.value;
+if(isNaN(a))
+{
+alert("please enter valid pin code");
+}
+else
+{
+if(a.length!=6)
+{
+alert("please enter valid pin code");
+}
+}
+}
+function nav()
+{
+var a=new Date();
+var b=a.getDate();
+var c=a.getMonth();
+var d=a.getYear();
+var e=a.getHours();
+var f=a.getMinutes();
+frm.t1.value=b;
+frm.t2.value=c+1;
+frm.t3.value=d;
+frm.tt1.value=e;
+frm.tt2.value=f;
+}
+
+
+</script>
+</HEAD>
+<body background="new.jpg">
+<center><H1>Please fill the following details correctly for updating your order ...</h1></center>
+<form name="frm" METHOD="POST" ACTION="DELETE.PHP">
+<table border=50 bordercolor=maroon align=center cellpadding=5 cellspacing=10>
+<TR>
+<TD><b><h3>Order Number</b></h3></td><TD><input type="text" name="orderno" size=15></td></tr>
+<TR>
+<TD><b><h3>Name</b></h3></td><TD><input type="text" name="name" size=15></td></tr>
+<TD><b><h3>Mobile</b></h3></td><TD><input type="text" name="mobile" size=15 maxlength=10 onBlur="fu1()"></td></tr>
+<TD><b><h3>Email</td><TD><input type="text" name="email" size=15></td></tr>
+<TR ALIGN="CENTER"><TD COLSPAN=2><BUTTON NAME="BTN" TYPE="SUBMIT" CLASS=BUTTON1>DELETE ORDER</BUTTON></TD></TR>
+</table></br>
+</BODY>
+
+</HTML>
